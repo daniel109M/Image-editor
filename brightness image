@@ -1,0 +1,13 @@
+import org.opencv.core.Core;
+import org.opencv.core.Mat;
+import org.opencv.imgcodecs.Imgcodecs;
+public class Brightness {
+   public static void main (String[] args) {
+      System.loadLibrary( Core.NATIVE_LIBRARY_NAME );
+      String file ="C:\\Users\\HP\\Desktop\\JAVAS\\project/brightness.jpg";
+      Mat src = Imgcodecs.imread(file, Imgcodecs.IMREAD_COLOR)
+      Mat dest = new Mat(src.rows(), src.cols(), src.type());
+      src.convertTo(dest, -1, 1, 100);
+      Imgcodecs.imwrite("C:\\Users\\HP\\Desktop\\JAVAS\\project/brightness.jpg", dest);
+   }
+}
